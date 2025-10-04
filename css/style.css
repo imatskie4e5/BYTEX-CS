@@ -1,0 +1,259 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap");
+
+/* other css file imports */
+@import url("sections/header.css");
+@import url("sections/hero.css");
+@import url("sections/about.css");
+@import url("sections/Benefits.css");
+@import url("sections/trending.css");
+@import url("sections/subscribe.css");
+@import url("sections/footer.css");
+
+
+/* CSS variables for reusablity across all files (including above imported) */
+:root {
+  --playfair-display: "Playfair Display", serif;
+  --plus-jakarta-sans: "Plus Jakarta Sans", sans-serif;
+
+  --primary-color: #20252e;
+  --secondary-color: #442c4b;
+  --black-200: #4e3f3f;
+  --black-300: #333333;
+  --black-400: #1f1e31;
+  --black-500: #555555;
+  --gray-100: #888888;
+
+  --color-white: #fff;
+  --color-creamson: #ebebeb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  max-width: 1280px;
+  margin: 0 auto;
+  background-color: var(--color-creamson);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.club__subtitle {
+  font-size: 18px;
+  font-weight: 400;
+  font-family: var(--plus-jakarta-sans);
+
+  color: var(--primary-color);
+  opacity: 0.8;
+
+  letter-spacing: -0.01em;
+}
+
+.club__title {
+  font-size: 64px;
+  font-weight: 600;
+  font-family: var(--playfair-display);
+
+  color: var(--secondary-color);
+
+  margin-top: 16px;
+  text-align: center;
+}
+
+.club__description {
+  font-size: 18px;
+  font-weight: 400;
+  font-family: var(--plus-jakarta-sans);
+
+  line-height: 36px;
+  letter-spacing: -0.01em;
+
+  color: var(--secondary-color);
+  opacity: 0.8;
+
+  margin: 32px 0px;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.club__hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.club__hide-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+
+/* START: header media querie */
+@media screen and (max-width: 900px) {
+  .header__nav {
+    background: var(--primary-color);
+  }
+
+  .header__home {
+    display: none;
+  }
+
+  .header__home-mobile {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .header__logo {
+    padding-left: 0;
+  }
+}
+
+/* END: header media queries */
+
+/* START: hero media queries */
+@media screen and (max-width: 1060px) {
+  .hero {
+    flex-direction: column;
+  }
+
+  .hero-image img {
+    width: 100%;
+
+    transform: matrix(1, 0.05, 0, 1.25, 0, 0) !important;
+  }
+}
+
+
+
+
+  .hero-content-info {
+    padding: 32px;
+  }
+
+  .hero-content-info h1 {
+    font-size: 60px;
+  }
+
+  .hero-content-info p {
+    margin: 32px 0;
+  }
+
+  .hero-content__buttons {
+    margin: 41px 0;
+  }
+
+  .hero-content__testimonial {
+    padding: 32px;
+  }
+
+
+/* END: hero media queries */
+
+/* Responsive enhancements and fixes */
+:root {
+  --playfair-display: "Playfair Display", serif;
+  --plus-jakarta-sans: "Plus Jakarta Sans", sans-serif;
+  --primary-color: #20252e;
+  --secondary-color: #442c4b;
+  --black-200: #4e3f3f;
+  --black-300: #333333;
+  --black-400: #1f1e31;
+  --black-500: #555555;
+  --gray-100: #888888;
+  --color-white: #fff;
+  --color-creamson: #ebebeb;
+}
+
+/* Make images responsive by default */
+img { max-width: 100%; height: auto; }
+
+/* Improve base typography scaling */
+.club__title {
+  font-size: clamp(28px, 6vw, 64px);
+}
+.club__description {
+  font-size: clamp(14px, 2.2vw, 18px);
+  line-height: 1.8;
+}
+
+/* Restore desktop-intended hero spacings/text sizes (some earlier rules were too global) */
+@media screen and (min-width: 901px) {
+  .hero-content-info { padding: 64px; }
+  .hero-content-info h1 { font-size: 80px; }
+  .hero-content-info p { margin: 32px 0 0 32px; }
+  .hero-content__buttons { margin: 41px 0 0 41px; }
+  .hero-content__testimonial { padding: 32px 64px; }
+  /* Restore full-width hero logo on desktop; do not cap by global img max-width */
+  .hero-image img { max-width: none; }
+}
+
+/* Mobile/tablet hero adjustments */
+@media screen and (max-width: 900px) {
+  body { padding: 0 12px; }
+  .hero { flex-direction: column; }
+  .hero-image img { padding-right: 0; height: auto; }
+  .hero-content-info { padding: 24px 16px; }
+  .hero-content-info h1 { font-size: clamp(28px, 8vw, 48px); }
+  .hero-content-info p { margin: 16px 0 0 0; }
+  .hero-content__buttons { margin: 24px 0 0 0; gap: 16px; }
+  .hero-content__testimonial { padding: 16px; }
+}
+
+/* About section responsive */
+@media screen and (max-width: 900px) {
+  .about-us { flex-direction: column; }
+  .about-us__content { padding: 24px 16px; }
+  .about-us__image div { padding: 24px 16px; }
+  .about-us__image-image01 img,
+  .about-us__image-image02 img { width: 50%; height: auto; }
+}
+
+/* Groups (Benefits) responsive */
+@media screen and (max-width: 992px) {
+  .groups { padding: 48px 24px; }
+}
+@media screen and (max-width: 768px) {
+  .groups { padding: 32px 16px; }
+  .groups__title { font-size: clamp(24px, 6vw, 40px); line-height: 1.2; }
+  .groups__catalogue { gap: 24px; }
+  .groups__card { width: 100%; max-width: 360px; min-height: auto; }
+}
+
+/* Trending responsive */
+@media screen and (max-width: 900px) {
+  .Academically, .Generally { flex-direction: column; min-height: auto; }
+  .trending__content { padding: 24px 16px; }
+  .trending__image { padding: 24px 16px; }
+  .trending__list { gap: 12px; }
+  .trending__list li { min-width: 140px; }
+  /* Hide decorative arrows on small screens to avoid overflow */
+  .trending__arrow { display: none; }
+  .trending__image img { width: 60%; height: auto; }
+}
+
+/* Footer/Subscribe minimal adjustments (in case used) */
+@media screen and (max-width: 600px) {
+  input, button, select, textarea { font-size: 16px; }
+}

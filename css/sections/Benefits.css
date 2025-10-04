@@ -1,0 +1,199 @@
+.groups {
+    padding: 64px;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--primary-color);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    overflow: hidden;
+}
+
+.groups__title {
+    font-size: 56px;
+    font-family: var(--playfair-display);
+    font-weight: 600;
+    line-height: 78px;
+    color: #fff;
+    text-align: center;
+}
+
+.groups__filters {
+    margin-top: 48px;
+    max-width: 100%;
+    overflow-x: auto;
+
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+.groups__filter-btn {
+    padding: 10px 28px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 46px;
+
+    font-size: 16px;
+    font-weight: 300px;
+    line-height: 25px;
+    font-family: var(--plus-jakarta-sans);
+    color: #fff;
+    cursor: pointer;
+}
+
+.groups__filter-btn img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+}
+
+.groups__filter-btn.active {
+    background: #fff;
+    color: var(--primary-color)
+}
+
+.groups__filter-btn:hover {
+    background: #fff;
+    color: var(--primary-color)
+}
+
+.groups__catalogue {
+    margin-top: 64px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 56px;
+}
+
+.groups__card {
+    padding: 38px;
+    width: 320px; /* uniform width for all cards */
+    min-height: 380px; /* uniform height for all cards */
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    border-radius: 36px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, color 0.25s ease;
+    will-change: transform;
+}
+
+.groups__card-image {
+    width: 110px;
+    height: 84px;
+    object-fit: contain;
+    transition: transform 0.25s ease;
+}
+
+.groups__card-title {
+    margin-top: 47px;
+
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    font-family: var(--playfair-display);
+    color: #fff;
+    text-align: center;
+}
+
+.groups__card-details {
+    width: 100%;
+    margin-top: 32px;
+}
+
+.groups__card-rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.groups__card-rating img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.groups__card-rating p {
+    font-size: 20px;
+    font-weight: 300;
+    font-family: var(--plus-jakarta-sans);
+    color: #fff;
+}
+
+.groups__card-price {
+    font-size: 20px;
+    font-weight: 500;
+    font-family: var(--plus-jakarta-sans);
+    color: #fff;
+}
+
+.groups__card.active-card {
+    /* Keep active card same as default (no white background) */
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.groups__card.active-card .groups__card-image {
+    width: 110px;
+    height: 84px;
+}
+
+.groups__card.active-card .groups__card-title {
+    color: #fff;
+}
+
+.groups__card.active-card .groups__card-rating img {
+    width: 24px;
+    height: 24px;
+}
+
+.groups__card.active-card .groups__card-rating p {
+    font-size: 20px;
+    color: #fff;
+}
+
+.groups__card.active-card .groups__card-price {
+    font-size: 20px;
+    color: #fff;
+}
+
+/* Hover: enlarge and whiten the card */
+.groups__card:hover {
+    background: #fff;
+    transform: scale(1.06);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+.groups__card:hover .groups__card-image {
+    transform: scale(1.1);
+}
+
+.groups__card:hover .groups__card-title {
+    color: var(--black-500);
+}
+
+.groups__card:hover .groups__card-rating p {
+    color: var(--gray-100);
+}
+
+.groups__card:hover .groups__card-price {
+    color: var(--secondary-color);
+}
