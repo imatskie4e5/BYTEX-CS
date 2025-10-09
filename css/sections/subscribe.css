@@ -108,5 +108,71 @@
   .subscription__form { padding: 12px; gap: 10px; border-radius: 16px; }
   .subscription__input { padding: 12px 14px; border-radius: 12px; }
   .subscription__button { padding: 14px 16px; border-radius: 12px; }
+}
 
+/* Interests fieldset styles */
+.subscription__interests {
+  width: 100%;
+  border: 1px dashed transparent;
+  border-radius: 14px;
+  padding: 0 14px 0;
+  color: #fff;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease, border-color 0.3s ease;
+}
+
+/* Reveal interests on hover/focus within the form */
+.subscription__form:hover .subscription__interests,
+.subscription__form:focus-within .subscription__interests {
+  max-height: 300px; /* large enough to fit content */
+  opacity: 1;
+  pointer-events: auto;
+  padding: 12px 14px 6px;
+  border-color: rgba(255,255,255,0.35);
+}
+.subscription__legend {
+  padding: 0 6px;
+  font-size: 14px;
+  font-family: var(--plus-jakarta-sans);
+  opacity: 0.85;
+}
+.subscription__checkboxes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 14px;
+  margin-top: 8px;
+}
+.subscription__checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--plus-jakarta-sans);
+  font-size: 14px;
+  opacity: 0.95;
+}
+.subscription__checkbox input[type="checkbox"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  border: 1px solid rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.06);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.subscription__checkbox input[type="checkbox"]:checked {
+  background: linear-gradient(135deg, var(--secondary-color), #6a3b74);
+  border-color: rgba(255,255,255,0.95);
+}
+.subscription__checkbox input[type="checkbox"]:focus-visible {
+  outline: 2px solid rgba(255,255,255,0.6);
+  outline-offset: 2px;
+}
+
+@media (max-width: 520px) {
+  .subscription__checkboxes { grid-template-columns: 1fr; }
 }
