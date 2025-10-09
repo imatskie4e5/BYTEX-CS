@@ -8,6 +8,7 @@
     gap: 16px;
     overflow: hidden;
     text-align: center;
+
 }
 
 .footer__logo {
@@ -63,7 +64,16 @@
     width: 20px;
     height: 20px;
     object-fit: contain;
-    filter: invert(1);
+    /* Force icons to render white even if the source SVG/PNG is dark */
+    filter: brightness(0) invert(1);
+}
+
+/* If social icons are inline SVGs, ensure they appear white too */
+.footer__social svg,
+.footer__social svg path,
+.footer__social svg use {
+    fill: #ffffff;
+    stroke: #ffffff;
 }
 
 /* Footer responsiveness */
